@@ -87,7 +87,7 @@ export default function StudentDetail() {
 
                         <div className="flex gap-2">
                             <Button variant="outline" asChild>
-                                <Link to="/dashboard/teacher/assign-content">
+                                <Link to="/teacher/assign-content">
                                     İçerik Ata
                                 </Link>
                             </Button>
@@ -332,7 +332,7 @@ export default function StudentDetail() {
                             </CardHeader>
                             <CardContent className="space-y-2">
                                 <Button variant="outline" className="w-full justify-start" asChild>
-                                    <Link to="/dashboard/teacher/assign-content">
+                                    <Link to="/teacher/assign-content">
                                         <BookOpen className="mr-2 h-4 w-4" />
                                         İçerik Ata
                                     </Link>

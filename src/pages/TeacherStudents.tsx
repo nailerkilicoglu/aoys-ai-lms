@@ -131,7 +131,7 @@ export default function TeacherStudents() {
                         </div>
                         <div className="flex gap-3">
                             <Button variant="outline" asChild>
-                                <Link to="/dashboard/teacher/assign-content">
+                                <Link to="/teacher/assign-content">
                                     <Send className="mr-2 h-4 w-4" />
                                     İçerik Ata
                                 </Link>
@@ -327,7 +327,7 @@ export default function TeacherStudents() {
                                                         </Link>
                                                     </Button>
                                                     <Button size="sm" variant="ghost" asChild title="İçerik Ata">
-                                                        <Link to="/dashboard/teacher/assign-content">
+                                                        <Link to="/teacher/assign-content">
                                                             <Send className="h-4 w-4" />
                                                         </Link>
                                                     </Button>

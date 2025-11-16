@@ -70,13 +70,12 @@ export default function TeacherAnalytics() {
                         <TabsTrigger value="overview">Genel Bakış</TabsTrigger>
                         <TabsTrigger value="courses">Kurs Detayları</TabsTrigger>
                         <TabsTrigger value="engagement">Etkileşim</TabsTrigger>
-                        <TabsTrigger value="revenue">Gelir Analizi</TabsTrigger>
                     </TabsList>
 
                     {/* Overview Tab */}
                     <TabsContent value="overview" className="space-y-6">
                         {/* Key Metrics */}
-                        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                             <Card>
                                 <CardContent className="p-6">
                                     <div className="flex items-center justify-between">
@@ -107,24 +106,11 @@ export default function TeacherAnalytics() {
                                 <CardContent className="p-6">
                                     <div className="flex items-center justify-between">
                                         <div>
-                                            <div className="text-sm text-muted-foreground mb-1">Toplam Gelir</div>
-                                            <div className="text-3xl font-bold text-xp">₺186K</div>
-                                            <div className="text-xs text-xp mt-1">+22% bu ay</div>
+                                            <div className="text-sm text-muted-foreground mb-1">Aktif Kurslar</div>
+                                            <div className="text-3xl font-bold text-secondary">5</div>
+                                            <div className="text-xs text-muted-foreground mt-1">Sistemde mevcut</div>
                                         </div>
-                                        <TrendingUp className="h-10 w-10 text-xp/50" />
-                                    </div>
-                                </CardContent>
-                            </Card>
-
-                            <Card>
-                                <CardContent className="p-6">
-                                    <div className="flex items-center justify-between">
-                                        <div>
-                                            <div className="text-sm text-muted-foreground mb-1">Ort. Puan</div>
-                                            <div className="text-3xl font-bold text-gold">4.7</div>
-                                            <div className="text-xs text-muted-foreground mt-1">248 değerlendirme</div>
-                                        </div>
-                                        <Award className="h-10 w-10 text-gold/50" />
+                                        <BookOpen className="h-10 w-10 text-secondary/50" />
                                     </div>
                                 </CardContent>
                             </Card>
@@ -254,15 +240,7 @@ export default function TeacherAnalytics() {
                                                     <Users className="h-4 w-4" />
                                                     {course.students} öğrenci
                                                 </span>
-                                                <span className="flex items-center gap-1">
-                                                    <Award className="h-4 w-4 text-gold" />
-                                                    {course.avgRating}
-                                                </span>
                                             </div>
-                                        </div>
-                                        <div className="text-right">
-                                            <div className="text-2xl font-bold text-xp">₺{course.revenue.toLocaleString()}</div>
-                                            <div className="text-xs text-muted-foreground">Toplam Gelir</div>
                                         </div>
                                     </div>
 
@@ -378,65 +356,6 @@ export default function TeacherAnalytics() {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </CardContent>
-                        </Card>
-                    </TabsContent>
-
-                    {/* Revenue Tab */}
-                    <TabsContent value="revenue" className="space-y-6">
-                        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                            <Card>
-                                <CardContent className="p-6 text-center">
-                                    <div className="text-sm text-muted-foreground mb-1">Toplam Gelir</div>
-                                    <div className="text-3xl font-bold text-xp">₺186,000</div>
-                                    <div className="text-xs text-xp mt-1">+22% bu ay</div>
-                                </CardContent>
-                            </Card>
-
-                            <Card>
-                                <CardContent className="p-6 text-center">
-                                    <div className="text-sm text-muted-foreground mb-1">Aylık Gelir</div>
-                                    <div className="text-3xl font-bold text-primary">₺42,500</div>
-                                    <div className="text-xs text-xp mt-1">+15% geçen aya göre</div>
-                                </CardContent>
-                            </Card>
-
-                            <Card>
-                                <CardContent className="p-6 text-center">
-                                    <div className="text-sm text-muted-foreground mb-1">Öğrenci Başına</div>
-                                    <div className="text-3xl font-bold text-gold">₺150</div>
-                                    <div className="text-xs text-muted-foreground mt-1">Ortalama gelir</div>
-                                </CardContent>
-                            </Card>
-
-                            <Card>
-                                <CardContent className="p-6 text-center">
-                                    <div className="text-sm text-muted-foreground mb-1">Yeni Satışlar</div>
-                                    <div className="text-3xl font-bold">284</div>
-                                    <div className="text-xs text-xp mt-1">Bu ay</div>
-                                </CardContent>
-                            </Card>
-                        </div>
-
-                        <Card>
-                            <CardHeader>
-                                <CardTitle>Kurs Bazlı Gelir Dağılımı</CardTitle>
-                            </CardHeader>
-                            <CardContent>
-                                <div className="space-y-4">
-                                    {courseStats.map((course, idx) => {
-                                        const percentage = (course.revenue / 186000) * 100;
-                                        return (
-                                            <div key={idx}>
-                                                <div className="flex justify-between items-center mb-2">
-                                                    <span className="text-sm font-medium">{course.name}</span>
-                                                    <span className="text-sm font-bold">₺{course.revenue.toLocaleString()}</span>
-                                                </div>
-                                                <Progress value={percentage} className="h-3" />
-                                            </div>
-                                        );
-                                    })}
                                 </div>
                             </CardContent>
                         </Card>

@@ -393,8 +393,7 @@ export default function AssignContent() {
                                                 {students.map((student) => (
                                                     <div
                                                         key={student.id}
-                                                        className="flex items-center space-x-3 p-2 hover:bg-muted rounded cursor-pointer"
-                                                        onClick={() => handleStudentToggle(student.id)}
+                                                        className="flex items-center space-x-3 p-2 hover:bg-muted rounded"
                                                     >
                                                         <Checkbox
                                                             id={`student-${student.id}`}
@@ -404,6 +403,10 @@ export default function AssignContent() {
                                                         <label
                                                             htmlFor={`student-${student.id}`}
                                                             className="flex-1 cursor-pointer"
+                                                            onClick={(e) => {
+                                                                e.preventDefault();
+                                                                handleStudentToggle(student.id);
+                                                            }}
                                                         >
                                                             <div className="font-medium text-sm">{student.name}</div>
                                                             <div className="text-xs text-muted-foreground">

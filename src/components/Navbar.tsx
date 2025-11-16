@@ -2,6 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Brain, Bell, Search, LogOut, User, Award, Settings } from 'lucide-react';
 import { useUserStore } from '@/store/userStore';
 import { Button } from '@/components/ui/button';
+import { ThemeToggle } from '@/components/ThemeToggle';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -77,6 +78,9 @@ export const Navbar = () => {
                   <span className="absolute top-1 right-1 h-2 w-2 bg-streak rounded-full" />
                 </Button>
 
+                {/* Theme Toggle */}
+                <ThemeToggle />
+
                 {/* Profile Dropdown */}
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
@@ -123,6 +127,7 @@ export const Navbar = () => {
               </>
             ) : (
               <>
+                <ThemeToggle />
                 <Button variant="ghost" asChild>
                   <Link to="/login">Giriş Yap</Link>
                 </Button>

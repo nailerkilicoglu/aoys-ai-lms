@@ -269,7 +269,7 @@ export default function TeacherDashboard() {
                                     </Link>
                                 </Button>
                                 <Button variant="outline" className="w-full justify-start" asChild>
-                                    <Link to="/dashboard/teacher/assign-content">
+                                    <Link to="/teacher/assign-content">
                                         <MessageSquare className="mr-2 h-4 w-4" />
                                         İçerik Ata
                                     </Link>
